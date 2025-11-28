@@ -5,7 +5,7 @@ def OpenRecievedFile(filedata):
         filedata=open("data.json", "r", encoding="utf-8")
         lines=filedata.read()
 
-        VerifyType(lines,filedata)
+        VerifyType(lines)
         
         filedata.close()
         return lines
@@ -25,6 +25,7 @@ def IsEmpty(lines):
    
     if lines == "":
         print("Erro: Ficheiro Vazio!")
+        
     else:
         AllCamps(lines) 
 
@@ -38,3 +39,4 @@ def AllCamps(lines):
 
 filedata=input()
 OpenRecievedFile(filedata)
+print("Processo Concluído!")
