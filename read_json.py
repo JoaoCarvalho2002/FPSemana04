@@ -8,18 +8,18 @@ def OpenRecievedFile(filedata):
         VerifyType(lines)
         
         filedata.close()
-        return lines
+        
     else:
         return print("Erro: Ficheiro Não Encontrado!")
 
 def VerifyType(lines):
     try:
-        json.loads(lines)
+        tempval=json.loads(lines)
         
         IsEmpty(lines)
     except json.JSONDecodeError:
         print("Erro: Ficheiro Não Contém JSON Válido!")
-        return None
+        
 
 def IsEmpty(lines):
    
@@ -34,6 +34,7 @@ def AllCamps(lines):
     for k in data.items():
         if(k[1]==""):
             print("Erro: Campos Obrigatórios em Falta!")
+            break
         else:
             return print(data)
 
